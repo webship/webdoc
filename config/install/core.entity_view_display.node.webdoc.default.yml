@@ -1,0 +1,80 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.webdoc.body
+    - node.type.webdoc
+  module:
+    - book
+    - layout_builder
+    - manage_display
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 33-67
+        components:
+          fe857b03-6805-4ef3-b9c0-6313f8538ce3:
+            uuid: fe857b03-6805-4ef3-b9c0-6313f8538ce3
+            region: second
+            configuration:
+              id: 'field_block:node:webdoc:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          bf9ac121-6124-4fbb-96af-e1d4dec94ef2:
+            uuid: bf9ac121-6124-4fbb-96af-e1d4dec94ef2
+            region: first
+            configuration:
+              id: book_navigation
+              label: 'Book navigation'
+              label_display: '0'
+              provider: book
+              context_mapping: {  }
+              block_mode: 'all pages'
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.webdoc.default
+targetEntityType: node
+bundle: webdoc
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  title:
+    type: title
+    label: hidden
+    settings:
+      linked: true
+      tag: h2
+    third_party_settings: {  }
+    weight: -49
+    region: content
+hidden:
+  created: true
+  uid: true

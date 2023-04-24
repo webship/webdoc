@@ -1,0 +1,81 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.webdoc.body
+    - node.type.webdoc
+  module:
+    - book
+    - layout_builder
+    - manage_display
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 25-75
+        components:
+          cd9ceee9-2df6-41cf-a670-0ce998a02982:
+            uuid: cd9ceee9-2df6-41cf-a670-0ce998a02982
+            region: second
+            configuration:
+              id: 'field_block:node:webdoc:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          1d5d9496-858a-47da-ad5a-29ae9b3909a9:
+            uuid: 1d5d9496-858a-47da-ad5a-29ae9b3909a9
+            region: first
+            configuration:
+              id: book_navigation
+              label: 'Book navigation'
+              label_display: '0'
+              provider: book
+              context_mapping: {  }
+              block_mode: 'all pages'
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.webdoc.full
+targetEntityType: node
+bundle: webdoc
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  title:
+    type: title
+    label: hidden
+    settings:
+      linked: true
+      tag: h2
+    third_party_settings: {  }
+    weight: -49
+    region: content
+hidden:
+  created: true
+  uid: true

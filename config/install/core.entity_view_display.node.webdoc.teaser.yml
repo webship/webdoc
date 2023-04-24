@@ -1,0 +1,89 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.webdoc.body
+    - node.type.webdoc
+  module:
+    - layout_builder
+    - layout_discovery
+    - manage_display
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          cc259b6e-1974-4f2a-8af4-7f3387d89880:
+            uuid: cc259b6e-1974-4f2a-8af4-7f3387d89880
+            region: content
+            configuration:
+              id: 'field_block:node:webdoc:title'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: title
+                label: hidden
+                settings:
+                  linked: true
+                  tag: h2
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          e66e51e2-1a08-4a48-b587-a401577f776d:
+            uuid: e66e51e2-1a08-4a48-b587-a401577f776d
+            region: content
+            configuration:
+              id: 'field_block:node:webdoc:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 300
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: node.webdoc.teaser
+targetEntityType: node
+bundle: webdoc
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  title:
+    type: title
+    label: hidden
+    settings:
+      linked: true
+      tag: h2
+    third_party_settings: {  }
+    weight: -49
+    region: content
+hidden:
+  created: true
+  uid: true
