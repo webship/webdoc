@@ -1,0 +1,13 @@
+name: Web Doc - Default
+description: A recipe to manage default installed modules, configs and permissions.
+type: install
+install:
+  - book
+  - node
+  - menu_ui
+  - layout_builder
+  - layout_discovery
+  - manage_display
+  - text
+config:
+  strict: false
