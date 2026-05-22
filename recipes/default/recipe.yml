@@ -8,6 +8,23 @@ install:
   - layout_builder
   - layout_discovery
   - manage_display
+  - pathauto
   - text
 config:
   strict: false
+  actions:
+    book.settings:
+      simpleConfigUpdate:
+        allowed_types:
+          -
+            content_type: webdoc
+            child_type: webdoc
+    user.role.content_editor:
+      grantPermissions:
+        - 'create webdoc content'
+        - 'edit own webdoc content'
+        - 'delete own webdoc content'
+        - 'view webdoc revisions'
+        - 'access book list'
+        - 'add content to books'
+        - 'create new books'

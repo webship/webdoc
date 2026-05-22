@@ -10,7 +10,7 @@ third_party_settings:
 name: 'Web Doc'
 type: webdoc
 description: 'Use <em>Web Doc</em> to add documentation pages to the documentation section.'
-help: ''
+help: 'Create a Web Doc page. Provide a title and body content; pages can be organized as a book hierarchy and rendered with Layout Builder.'
 new_revision: true
 preview_mode: 1
 display_submitted: true

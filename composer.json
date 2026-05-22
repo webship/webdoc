@@ -24,6 +24,8 @@
   },
   "require": {
     "drupal/core": "~11.3.0",
-    "drupal/book": "~3.0"
+    "drupal/book": "~3.0",
+    "drupal/manage_display": "~3.0",
+    "drupal/pathauto": "~1.0"
   }
 }

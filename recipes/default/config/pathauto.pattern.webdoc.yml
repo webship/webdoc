@@ -6,7 +6,7 @@ dependencies:
 id: webdoc
 label: 'Web Doc'
 type: 'canonical_entities:node'
-pattern: '[node:book:parents:join-path]/[node:title]'
+pattern: 'web-doc/[node:book:parents:join-path]/[node:title]'
 selection_criteria:
   375c6cd5-d970-4331-854d-6a1cb1554a14:
     id: 'entity_bundle:node'
