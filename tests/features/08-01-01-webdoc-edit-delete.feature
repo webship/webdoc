@@ -22,7 +22,8 @@ Feature: Edit and delete Web Doc pages
      And I fill in "Delete Me Doc" for "Title"
      And I press "Save"
     Then I should see "has been created"
-    When I follow "Delete"
+    When I click "top-bar-page-actions" by "aria-controls" attr
+     And I follow "Delete"
     Then I should see "Are you sure you want to delete"
      And I should see "Delete Me Doc"
      And I should see the button "Delete"
