@@ -1,7 +1,7 @@
 {
   "name": "webdoc",
   "private": true,
-  "description": "A quick and basic setup for Web Documentation, using the Book and Layout Builder modules, to add documentation pages to the documentation section.",
+  "description": "A quick and basic setup for Web Documentation, using the Book and Display Builder modules, to add documentation pages to the documentation section.",
   "license": "GPL-2.0",
   "engines": {
     "yarn": ">= 1.6",

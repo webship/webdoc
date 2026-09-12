@@ -1,6 +1,6 @@
 {
   "name": "drupal/webdoc",
-  "description": "A quick and basic setup for Web Documentation, using the Book and Layout Builder modules, to add documentation pages to the documentation section.",
+  "description": "A quick and basic setup for Web Documentation, using the Book and Display Builder modules, to add documentation pages to the documentation section.",
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/webdoc",
   "license": "GPL-2.0-or-later",
@@ -23,9 +23,10 @@
     }
   },
   "require": {
-    "drupal/core": "~11.4.0",
+    "drupal/core": "^11.4 || ^12",
     "drupal/book": "~3.0",
     "drupal/manage_display": "~3.0",
-    "drupal/pathauto": "~1.0"
+    "drupal/pathauto": "~1.0",
+    "drupal/display_builder": "^1.0@beta"
   }
 }

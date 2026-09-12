@@ -6,49 +6,37 @@ dependencies:
     - node.type.webdoc
   module:
     - book
-    - layout_builder
+    - display_builder
     - manage_display
     - text
 third_party_settings:
-  layout_builder:
-    enabled: true
-    allow_custom: false
-    sections:
+  display_builder:
+    profile: default
+    sources:
       -
-        layout_id: layout_twocol_section
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-          column_widths: 33-67
-        components:
-          fe857b03-6805-4ef3-b9c0-6313f8538ce3:
-            uuid: fe857b03-6805-4ef3-b9c0-6313f8538ce3
-            region: second
-            configuration:
-              id: 'field_block:node:webdoc:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          bf9ac121-6124-4fbb-96af-e1d4dec94ef2:
-            uuid: bf9ac121-6124-4fbb-96af-e1d4dec94ef2
-            region: first
-            configuration:
-              id: book_navigation
-              label: 'Book navigation'
-              label_display: '0'
-              provider: book
-              context_mapping: {  }
-              block_mode: 'all pages'
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:webdoc:body'
+          'field:node:webdoc:body':
+            value:
+              sources:
+                -
+                  source_id: 'field_formatter:node:webdoc:body'
+                  source:
+                    type: text_default
+                    label: hidden
+                    settings: {  }
+                    third_party_settings: {  }
+      -
+        source_id: block
+        source:
+          plugin_id: book_navigation
+          book_navigation:
+            id: book_navigation
+            label: 'Book navigation'
+            label_display: '0'
+            provider: book
+            block_mode: 'all pages'
 id: node.webdoc.default
 targetEntityType: node
 bundle: webdoc

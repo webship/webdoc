@@ -18,6 +18,6 @@ Feature: Content Structure - Web Doc fields
     When I navigate to "/admin/structure/types/manage/webdoc/display"
     Then I should see "Manage display"
 
-  Scenario: Web Doc full view mode is managed by Layout Builder
+  Scenario: Web Doc full view mode is managed by Display Builder
     When I navigate to "/admin/structure/types/manage/webdoc/display/full"
-    Then I should see "Manage layout"
+    Then I should see "Display builder"

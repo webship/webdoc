@@ -1,4 +1,6 @@
 name: Web Doc
 type: module
-description: A quick and basic setup for Web Documentation, using the Book and Layout Builder modules, to add documentation pages to the documentation section.
-core_version_requirement: ~11.4.0
+description: A quick and basic setup for Web Documentation, using the Book and Display Builder modules, to add documentation pages to the documentation section.
+core_version_requirement: ^11.4 || ^12
+dependencies:
+  - display_builder:display_builder_entity_view

@@ -13,6 +13,6 @@ Feature: Book navigation block on Web Doc pages
     Then I should see "has been created"
      And I should see "Navigated Doc"
 
-  Scenario: The webdoc full view mode is managed by Layout Builder (Book navigation lives in the layout)
+  Scenario: The webdoc full view mode is managed by Display Builder (Book navigation lives in the display)
     When I navigate to "/admin/structure/types/manage/webdoc/display/full"
-    Then I should see "Manage layout"
+    Then I should see "Display builder"
