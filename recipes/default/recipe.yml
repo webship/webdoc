@@ -11,6 +11,8 @@ install:
   - display_builder
   - display_builder_entity_view
   - display_builder_ui
+  # Last, after its dependencies: the Web Doc module itself.
+  - webdoc
 config:
   strict: false
   import:
