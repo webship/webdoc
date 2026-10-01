@@ -3,12 +3,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.webdoc.body
+    - field.field.node.webdoc.field_body
+    - field.field.node.webdoc.field_summary
     - node.type.webdoc
   module:
     - display_builder
     - manage_display
-    - text
 third_party_settings:
   display_builder:
     profile: default
@@ -32,28 +32,26 @@ third_party_settings:
       -
         source_id: entity_field
         source:
-          derivable_context: 'field:node:webdoc:body'
-          'field:node:webdoc:body':
+          derivable_context: 'field:node:webdoc:field_summary'
+          'field:node:webdoc:field_summary':
             value:
               sources:
                 -
-                  source_id: 'field_formatter:node:webdoc:body'
+                  source_id: 'field_formatter:node:webdoc:field_summary'
                   source:
-                    type: text_summary_or_trimmed
+                    type: basic_string
                     label: hidden
-                    settings:
-                      trim_length: 300
+                    settings: {  }
                     third_party_settings: {  }
 id: node.webdoc.teaser
 targetEntityType: node
 bundle: webdoc
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
+  field_summary:
+    type: basic_string
     label: hidden
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
     weight: 101
     region: content
@@ -72,5 +70,9 @@ content:
     weight: -49
     region: content
 hidden:
+  book_navigation: true
+  book_navigation_without_tree: true
   created: true
+  field_body: true
+  field_summary: true
   uid: true

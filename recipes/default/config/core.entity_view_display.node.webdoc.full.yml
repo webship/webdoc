@@ -3,10 +3,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.webdoc.body
+    - field.field.node.webdoc.field_body
+    - field.field.node.webdoc.field_summary
     - node.type.webdoc
   module:
-    - book
     - display_builder
     - manage_display
     - text
@@ -17,12 +17,12 @@ third_party_settings:
       -
         source_id: entity_field
         source:
-          derivable_context: 'field:node:webdoc:body'
-          'field:node:webdoc:body':
+          derivable_context: 'field:node:webdoc:field_body'
+          'field:node:webdoc:field_body':
             value:
               sources:
                 -
-                  source_id: 'field_formatter:node:webdoc:body'
+                  source_id: 'field_formatter:node:webdoc:field_body'
                   source:
                     type: text_default
                     label: hidden
@@ -43,7 +43,7 @@ targetEntityType: node
 bundle: webdoc
 mode: full
 content:
-  body:
+  field_body:
     type: text_default
     label: hidden
     settings: {  }
@@ -65,5 +65,9 @@ content:
     weight: -49
     region: content
 hidden:
+  book_navigation: true
+  book_navigation_without_tree: true
   created: true
+  field_body: true
+  field_summary: true
   uid: true
