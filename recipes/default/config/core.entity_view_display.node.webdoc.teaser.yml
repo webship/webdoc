@@ -39,7 +39,7 @@ third_party_settings:
                 -
                   source_id: 'field_formatter:node:webdoc:body'
                   source:
-                    type: text_summary_or_trimmed
+                    type: text_trimmed
                     label: hidden
                     settings:
                       trim_length: 300
@@ -50,7 +50,7 @@ bundle: webdoc
 mode: teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: text_trimmed
     label: hidden
     settings:
       trim_length: 600
