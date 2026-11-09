@@ -1,4 +1,11 @@
 name: Web Doc
 type: module
-description: A quick and basic setup for Web Documentation, using the Book and Layout Builder modules, to add documentation pages to the documentation section.
+description: A quick and basic setup for Web Documentation, using the Book module, to add documentation pages to the documentation section; the pages are laid out by the theme and indexed as JSON for a search.
 core_version_requirement: ~11.4.0
+dependencies:
+  - book:book
+  - drupal:node
+  - drupal:rest
+  - drupal:serialization
+  - drupal:text
+  - drupal:views
