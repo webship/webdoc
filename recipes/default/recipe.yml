@@ -5,11 +5,12 @@ install:
   - book
   - node
   - menu_ui
-  - layout_builder
-  - layout_discovery
   - manage_display
   - pathauto
+  - rest
+  - serialization
   - text
+  - views
 config:
   strict: false
   actions:

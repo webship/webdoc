@@ -15,3 +15,25 @@ function webdoc_install() {
   $default_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/default');
   RecipeRunner::processRecipe($default_recipe);
 }
+
+/**
+ * The page shows its body and the book navigation; the index view serves the pages as JSON.
+ */
+function webdoc_update_11401(): string {
+  \Drupal::service('module_installer')->install(['rest', 'serialization', 'views']);
+  $dir = __DIR__ . '/recipes/default/config';
+  $factory = \Drupal::configFactory();
+  foreach (['core.entity_view_display.node.webdoc.default', 'core.entity_view_display.node.webdoc.full', 'views.view.webdoc_index'] as $name) {
+    $data = \Drupal\Core\Serialization\Yaml::decode(file_get_contents("$dir/$name.yml"));
+    $config = $factory->getEditable($name);
+    if ($uuid = $config->get('uuid')) {
+      $data['uuid'] = $uuid;
+    }
+    if ($name !== 'views.view.webdoc_index' && ($hidden = $config->get('hidden'))) {
+      // A site's own fields on the page type stay hidden rather than being forgotten.
+      $data['hidden'] = $data['hidden'] + array_fill_keys(array_keys(array_diff_key($hidden, $data['content'])), TRUE);
+    }
+    $config->setData($data)->save();
+  }
+  return 'The documentation pages show the body and the book navigation; the index view serves them as JSON at /docs/index.json?_format=json.';
+}
