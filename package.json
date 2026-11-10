@@ -70,5 +70,8 @@
     "last 1 Samsung version",
     "Firefox ESR"
   ],
-  "packageManager": "yarn@4.18.1"
+  "packageManager": "yarn@4.18.1",
+  "resolutions": {
+    "@cucumber/cucumber": "10.0.1"
+  }
 }
