@@ -13,7 +13,9 @@ Feature: Pathauto pattern for Web Doc
   Scenario: A new webdoc receives a pathauto alias under /web-doc
     When I navigate to "/node/add/webdoc"
      And I fill in "Aliased Doc" for "Title"
-     And I press "Save"
+     And I save the content
     Then I should see "has been created"
     When I navigate to "/web-doc/aliased-doc"
     Then I should see "Aliased Doc"
+    When I delete the content item I created
+    Then I should see "has been deleted"

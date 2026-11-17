@@ -9,8 +9,10 @@ Feature: Web Doc in the content admin listing
   Scenario: A new webdoc appears in the admin content listing
     When I navigate to "/node/add/webdoc"
      And I fill in "Listing Test Doc" for "Title"
-     And I press "Save"
+     And I save the content
     Then I should see "has been created"
     When I navigate to "/admin/content"
     Then I should see "Listing Test Doc"
      And I should see "Web Doc"
+    When I delete the content item I created
+    Then I should see "has been deleted"

@@ -9,9 +9,11 @@ Feature: Book navigation block on Web Doc pages
   Scenario: Newly created webdoc pages render without errors in full view
     When I navigate to "/node/add/webdoc"
      And I fill in "Navigated Doc" for "Title"
-     And I press "Save"
+     And I save the content
     Then I should see "has been created"
      And I should see "Navigated Doc"
+    When I delete the content item I created
+    Then I should see "has been deleted"
 
   Scenario: The webdoc full view mode is managed by Display Builder (Book navigation lives in the display)
     When I navigate to "/admin/structure/types/manage/webdoc/display/full"

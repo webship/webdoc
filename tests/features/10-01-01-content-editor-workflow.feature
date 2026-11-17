@@ -14,17 +14,21 @@ Feature: Content editor workflow on Web Doc
     When I navigate to "/node/add/webdoc"
     Then I should see "Create Web Doc"
     When I fill in "Editor Authored Doc" for "Title"
-     And I press "Save"
+     And I save the content
     Then I should see "has been created"
      And I should see "Editor Authored Doc"
+    When I delete the content item I created
+    Then I should see "has been deleted"
 
   Scenario: Content editor can edit their own Web Doc page
     When I navigate to "/node/add/webdoc"
      And I fill in "Editor Owned Doc" for "Title"
-     And I press "Save"
+     And I save the content
     Then I should see "has been created"
-    When I follow "Edit"
+    When I edit the content item I created
      And I fill in "Editor Owned Doc - Revised" for "Title"
-     And I press "Save"
+     And I save the content
     Then I should see "has been updated"
      And I should see "Editor Owned Doc - Revised"
+    When I delete the content item I created
+    Then I should see "has been deleted"

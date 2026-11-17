@@ -9,9 +9,11 @@ Feature: Book hierarchy for Web Doc
   Scenario: Create a top-level Web Doc that becomes a new book
     When I navigate to "/node/add/webdoc"
      And I fill in "Webdoc Handbook" for "Title"
-     And I press "Save"
+     And I save the content
     Then I should see "has been created"
      And I should see "Webdoc Handbook"
+    When I delete the content item I created
+    Then I should see "has been deleted"
 
   Scenario: The webdoc add form exposes the Book outline section
     When I navigate to "/node/add/webdoc"

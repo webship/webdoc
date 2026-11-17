@@ -20,6 +20,8 @@ Feature: Web Doc content type
   Scenario: Admin can create a webdoc page with title only
     When I navigate to "/node/add/webdoc"
      And I fill in "First Doc Page" for "Title"
-     And I press "Save"
+     And I save the content
     Then I should see "has been created"
      And I should see "First Doc Page"
+    When I delete the content item I created
+    Then I should see "has been deleted"
