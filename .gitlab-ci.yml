@@ -10,9 +10,9 @@ variables:
   # Also test with the next major Drupal version and the newest PHP.
   OPT_IN_TEST_NEXT_MAJOR: 1
   OPT_IN_TEST_MAX_PHP: 1
-  # For now, build and test with Drupal 11.4 and PHP 8.4.
+  # For now, build and test with Drupal 11.4 and PHP 8.5.
   DRUPAL_CORE: "11.4.x-dev"
-  _TARGET_PHP: "8.4"
+  _TARGET_PHP: "8.5"
   COMPOSER_FLAGS: "--no-strict-lock"
   COMPOSER_MEMORY_LIMIT: "-1"
   # No yarn.lock is committed; Yarn 4 defaults to immutable installs and would
